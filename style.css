@@ -1,10 +1,10 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #64ffda; /* Cyan/Green - Warna Aksen Utama */
-    --secondary-color: #0a192f; /* Dark Blue - Warna Background Utama */
+    --primary-color: #0eea4c; /* Cyan/Green - Warna Aksen Utama */
+    --secondary-color: #104594; /* Dark Blue - Warna Background Utama */
     --card-bg: #172a45; /* Lighter Blue - Warna Background Kartu/Form */
     --text-color: #ccd6f6; /* Soft White - Warna Teks Utama */
-    --text-light: #8892b0; /* Muted Blue - Warna Teks Sekunder */
+    --text-light: #a8b2d1; /* Muted Blue - Warna Teks Sekunder */
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -105,6 +105,17 @@ header .container {
     transition: 0.3s;
 }
 
+/* Animasi hamburger menjadi 'X' saat menu aktif */
+.hamburger.toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
@@ -152,7 +163,7 @@ header .container {
 }
 
 .btn-primary:hover {
-    background-color: #4dccbe;
+    background-color: #0bc985; /* Warna hijau yang sedikit lebih gelap */
     transform: translateY(-2px);
 }
 
@@ -167,7 +178,7 @@ header .container {
     color: var(--secondary-color);
 }
 
-/* --- Services Section (Halaman Layanan) --- */
+/* --- Services Section --- */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,12 +191,12 @@ header .container {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(14, 234, 76, 0.1);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+    box-shadow: 0 10px 20px rgba(14, 234, 76, 0.2);
 }
 
 .service-card i {
@@ -204,7 +215,7 @@ header .container {
     color: var(--text-light);
 }
 
-/* --- Why Us Section (Halaman Mengapa Kami) --- */
+/* --- Why Us Section --- */
 .why-us-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -228,7 +239,7 @@ header .container {
     color: var(--text-light);
 }
 
-/* --- Contact Section (Halaman Kontak) --- */
+/* --- Contact Section --- */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -241,7 +252,7 @@ header .container {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 10px;
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(14, 234, 76, 0.1);
 }
 
 .contact-info p, .contact-info a {
@@ -273,7 +284,7 @@ header .container {
     border: 0;
 }
 
-/* --- Profil & Dokumentasi (Halaman Beranda) --- */
+/* --- Profil & Dokumentasi --- */
 .profile-content {
     text-align: center;
     max-width: 800px;
@@ -295,7 +306,7 @@ header .container {
 
 .documentation-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom di desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
@@ -310,7 +321,7 @@ header .container {
 
 .documentation-gallery figure:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.2);
+    box-shadow: 0 8px 25px rgba(14, 234, 76, 0.2);
 }
 
 .documentation-gallery img {
@@ -318,6 +329,19 @@ header .container {
     height: 250px;
     object-fit: cover;
     display: block;
+}
+
+/* --- Video Gallery --- */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.video-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Footer --- */
@@ -407,7 +431,7 @@ footer .container {
     }
 
     .documentation-gallery {
-        grid-template-columns: 1fr; /* 1 kolom di mobile */
+        grid-template-columns: 1fr;
     }
 
     footer .container {
@@ -416,30 +440,5 @@ footer .container {
     
     footer p {
         margin-bottom: 10px;
-    }
-}
-
-
-/* ========================================= */
-/* --- STYLE UNTUK VIDEO GALLERY (EMBED) --- */
-/* ========================================= */
-
-.video-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom di desktop */
-    gap: 25px;
-}
-
-.video-item {
-    /* Instagram embed sudah responsif, tapi kita beri sedikit style */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive untuk video gallery */
-@media (max-width: 768px) {
-    .video-gallery {
-        grid-template-columns: 1fr; /* 1 kolom di mobile */
     }
 }
