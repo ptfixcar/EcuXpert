@@ -199,10 +199,13 @@ header .container {
     box-shadow: 0 10px 20px rgba(14, 234, 76, 0.2);
 }
 
-.service-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+/* Cari kode .service-card i di style.css dan ganti dengan ini */
+.service-card img {
+    width: 240px;       /* Atur lebar gambar */
+    height: 180px;      /* Atur tinggi gambar agar seragam */
+    object-fit: contain; /* Mencegah gambar terdistorsi */
+    margin-bottom: 10px;
+    /* Tidak perlu 'color' atau 'font-size' lagi */
 }
 
 .service-card h3 {
