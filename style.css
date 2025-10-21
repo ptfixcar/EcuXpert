@@ -66,10 +66,20 @@ header .container {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
     text-decoration: none;
+}
+
+.logo-img {
+    height: 50px; /* Sesuaikan dengan kebutuhan */
+    width: auto;
+    max-width: 180px; /* Maksimal lebar logo */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
 .nav-links ul {
@@ -336,44 +346,63 @@ header .container {
 }
 
 /* --- Video Gallery --- */
-.video-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.video-item {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
 .video-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
-  flex-wrap: wrap; /* biar bisa turun kalau layar sempit */
 }
 
+/* Gaya utama embed IG */
 .video-wrapper blockquote.instagram-media {
-  width: 45% !important;   /* Desktop: 2 sejajar */
-  min-width: unset !important;
-  max-width: unset !important;
+  width: 45% !important;
+  max-width: 400px !important;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   margin: 0 auto !important;
 }
 
-/* Mobile: biar gak kepotong */
+/* Paksa isi penuh tanpa ruang putih */
+.video-wrapper blockquote.instagram-media iframe {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border: none;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .video-wrapper blockquote.instagram-media {
+    width: 48% !important;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .video-wrapper {
-    flex-direction: column; /* otomatis stack */
+    flex-direction: column;
     align-items: center;
   }
 
   .video-wrapper blockquote.instagram-media {
-    width: 100% !important; /* full lebar di mobile */
+    width: 90% !important;
+    max-width: 350px !important;
+    aspect-ratio: 9 / 16;
   }
 }
+
+/* HP kecil */
+@media (max-width: 480px) {
+  .video-wrapper blockquote.instagram-media {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
+
+
 
 /* --- Footer --- */
 footer {
